@@ -1,0 +1,305 @@
+<div class="container-fluid-sm">
+<div class="row">
+<div class="col-sm-4">
+    <input type="search"
+    placeholder="Search By Student_Name"
+    class="form-control "
+    [(ngModel)]="searchTerm" >
+</div>
+<div class="col-sm-2 text-center">
+    <button class="btn btn-success" data-target="#a" data-toggle="modal">Registration</button>
+</div>
+<div class="col-sm-2 text-center">
+    <button type="button" class="btn btn-secondary text-light" (click)="downloadPDF()">Download Pdf</button>
+</div>
+<div class="col-sm-2 text-center">
+    <button type="button" class="btn btn-primary text-light" (click)="downloadFile()">Download excel</button>
+</div>
+<div class="col-sm-2 mr-auto">
+    <label for="year" ><b>sort by year</b></label>
+    <select id="year" #refChange (change)="changeYear(refChange.value)" ngModel>
+        <option value="All">All</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+        <option value="2018">2018</option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+    </select>
+
+</div>
+</div>
+ 
+    
+   
+
+        <div class="modal" id="a">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                welocome
+            <button type="submit" class="btn btn-danger" data-dismiss="modal">X</button>
+            </div>
+
+        <div class="modal-body">
+        <form #reff="ngForm" (ngSubmit)="saveForm(reff.value)">
+            <h1 style="text-align: center;"><u>REGISTRATION FORM</u></h1><br>
+                    
+            <div class="form-group">
+                <label for="fn">FIRSTNAME</label>
+                <input type="text" name="firstname" required #ref41="ngModel"
+                        id="fn" class="form-control" ngModel>
+                
+                <div *ngIf="ref41.touched && ref41.invalid" class="alert alert-danger">
+                        FIRSTNAME IS MANDATORY
+                </div>
+            </div>
+                    
+            <div class="form-group">
+                <label for="ln">LASTNAME</label>
+                <input type="text" name="lastname" required #ref2="ngModel" 
+                       id="ln" class="form-control" ngModel>
+                
+               <div *ngIf="ref2.touched && ref2.invalid" class="alert alert-danger">
+                        LASTNAME IS MANDATORY
+                </div>
+            </div>
+                   
+            <div class="form-check">
+                <label for="gn">CHOOSE GENDER </label>
+                <label for="mk" style="margin-left: 15px;">Male</label>
+                    <input type="radio"  name="gender" id="mk" value="male" #ref55="ngModel" style="margin-left: 7px;" ngModel>
+                <label for="ml" style="margin-left: 15px;">Female</label>
+                    <input type="radio"  id="ml" name="gender" #ref55="ngModel" style="margin-left: 7px;" value="female" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="Pn">PHONE NUMBER</label>
+                <input type="number" name="phonenumber" required pattern="\d\d\d\d\d\d\d\d\d\d"
+                       required #ref4="ngModel" id="pn" class="form-control" ngModel>
+                
+                <div *ngIf="ref4.touched && ref4.invalid" class="alert alert-danger">
+                        PHONE NUMBER IS REQUIRED
+                </div>
+         
+                <div *ngIf="ref4.errors?.pattern" class="alert alert-danger">
+                        NUMBERS MUST BE IN 10 DIGITS
+                </div>
+            </div>
+                    
+            <div class="form-group">
+                <label for="ei">EMAIL ID</label>
+                <input type="email" name="emailid" id="ei" required #ref5="ngModel" 
+                       class="form-control" ngModel>
+                
+                <div *ngIf="ref5.touched && ref5.invalid" class="alert alert-danger">
+                        EMAIL ID IS REQUIRED
+                </div>
+            </div>
+                    
+            <div class="form-group">
+                <label for="dp">DEPARTMENTS</label>
+                <input type="text" id="dp" name="departments" class="form-control" [(ngModel)]="data1" [attr.disabled]="true">
+            </div>
+                    
+            <div class="form-group">
+                <label for="pa">POSTAL ADDRESS</label>
+                <textarea name="postaladdress" id="pa" cols="30" rows="03" 
+                class="form-control" #ref6="ngModel" ngModel></textarea>
+         
+                <div *ngIf="ref6.touched && ref6.invalid" class="alert alert-danger">
+                        ADDRESS IS REQUIRED
+                </div>
+            </div>
+                    
+            <div class="form-group">
+                <label for="yj">YEAR OF JOIN</label>
+                <input type="number" name="yearofjoin" required #ref7="ngModel"
+                       id="yj" class="form-control" ngModel>
+                
+                <div *ngIf="ref7.touched && ref7.invalid" class="alert alert-danger">
+                        YEAR OF JOIN IS REQUIRED
+                </div>
+            </div>
+                    
+            <div class="form-group">
+                <label for="sc">SSC %</label>
+                <input type="number" name="ssc" required #ref8="ngModel"
+                       id="sc" class="form-control" ngModel>
+                
+                <div *ngIf="ref8.touched && ref8.invalid" class="alert alert-danger">
+                        PERCENTAGE IS REQUIRED
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="it">INTER %</label>
+                <input type="number" required #ref9="ngModel" name="inter" 
+                       id="it" class="form-control" ngModel>
+         
+                <div *ngIf="ref9.touched && ref9.invalid" class="alert alert-danger">
+                        PERCENTAGE IS REQUIRED
+                </div>
+            </div>
+                    
+        </form>
+        </div>
+        <div class="modal-footer">
+            <div class="mx-auto">
+                <button type="submit" class="btn btn-danger" 
+                 (click)="saveForm(reff.value)" [disabled]="reff.invalid" data-dismiss="modal">REGISTER</button>
+            </div>
+        </div>
+            </div>
+            </div>
+    
+    </div>
+</div>
+<div style="overflow-x:auto;">
+<table class="table table-hover" style="margin-top: 20px;">
+    <thead>
+        <th>FIRSTNAME</th>
+        <th>LASSTNAME</th>
+        <th>CHOOSE GENDER</th>
+        <th>PHONE NUMBER</th>
+        <th>EMAIL ADDRESS</th>
+        <th>DEPARTMENTS</th>
+        <th>POSTAL ADDRESS</th>
+        <th>YEAR OF JOIN</th>
+        <th>SSC %</th>
+        <th>INTER %</th>
+        <th>UPDATE</th>
+        <th>DELETE</th>
+    </thead>
+    <tbody>
+<tr *ngFor="let m of data | common : searchTerm">
+        <td>{{m.firstname}}</td>
+        <td>{{m.lastname}}</td>
+        <td>{{m.gender}}</td>
+        <td>{{m.phonenumber}}</td>
+        <td>{{m.emailid}}</td>
+        <td>{{m.departments}}</td>
+        <td>{{m.postaladdress}}</td>
+        <td>{{m.yearofjoin}}</td>
+        <td>{{m.ssc}}</td>
+        <td>{{m.inter}}</td>
+        <td>
+            <button class="btn btn-warning" data-target="#b" data-toggle="modal" (click)="editUpdate(m)">EDIT</button>
+        </td>
+        <td>
+            <button class="btn btn-danger" (click)="deleteData(m)">DELETE</button>
+        </td>
+    </tr> 
+</tbody>
+</table>
+</div>
+<div class="modal" id="b">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+        EDIT YOUR FORM
+        <button type="submit" class="btn btn-danger" data-dismiss="modal">X</button>
+    </div>
+    <div class="modal-body">
+        <form #refg="ngForm" (ngSubmit)="updateForm(refg.value)">
+            <h1 style="text-align: center;"><u>REGISTRATION FORM</u></h1><br>
+           
+            <div class="form-group">
+                <label for="sn">FIRSTNAME</label>
+                <input type="text" name="firstname" required #ref20="ngModel" 
+                    [(ngModel)]="ed.firstname" id="sn" class="form-control" ngModel>
+                
+                <div *ngIf="ref20.touched && ref20.invalid" class="alert alert-danger">
+                    FIRSTNAME IS MANDATORY
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="dn">LASTNAME</label>
+                <input type="text" name="lastname" required #ref21="ngModel"
+                    [(ngModel)]="ed.lastname" id="dn" class="form-control" ngModel>
+                
+                <div *ngIf="ref21.touched && ref21.invalid" class="alert alert-danger">
+                    LASTNAME IS MANDATORY
+                </div>
+            </div>
+
+            <div class="form-check">
+                <label for="gn">CHOOSE GENDER </label>
+                <label for="ga" style="margin-left: 15px;">Male</label>
+                    <input type="radio"  name="gender" id="ga" value="male" style="margin-left: 7px;" ngModel>
+                <label for="fg" style="margin-left: 15px;">Female</label>
+                    <input type="radio"  id="fg" name="gender" style="margin-left: 7px;" value="female" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="Pg">PHONE NUMBER</label>
+                <input type="number" name="phonenumber" required pattern="\d\d\d\d\d\d\d\d\d\d"
+                    [(ngModel)]="ed.phonenumber" #ref22="ngModel" id="pg" class="form-control" ngModel>
+                
+                <div *ngIf="ref22.touched && ref22.invalid" class="alert alert-danger">
+                    PHONE NUMBER IS REQUIRED
+                </div>
+                <div *ngIf="ref22.errors?.pattern" class="alert alert-danger">
+                    NUMBERS MUST BE IN 10 DIGITS
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="li">EMAIL ID</label>
+                <input type="text" name="emailid" id="li" required #ref23="ngModel"
+                    [(ngModel)]="ed.emailid" class="form-control" ngModel>
+                
+                <div *ngIf="ref23.touched && ref23.invalid" class="alert alert-danger">
+                    EMAIL ID IS REQUIRED
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="kp">DEPARTMENTS</label>
+                <input type="text" id="kp" name="departments" class="form-control" [(ngModel)]="data1" [attr.disabled]="true">
+            </div>
+            <div class="form-group">
+                <label for="ma">POSTAL ADDRESS</label>
+                <input type="text" name="postaladdress" required #ref24="ngModel"
+                    [(ngModel)]="ed.postaladdress" id="ma" class="form-control" ngModel>
+                
+                <div *ngIf="ref24.touched && ref6.invalid" class="alert alert-danger">
+                    ADDRESS IS REQUIRED
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mj">YEAR OF JOIN</label>
+                <input type="number" name="yearofjoin" required #ref25="ngModel"
+                    [(ngModel)]="ed.yearofjoin" id="mj" class="form-control" ngModel>
+                
+                <div *ngIf="ref25.touched && ref25.invalid" class="alert alert-danger">
+                    YEAR OF JOIN IS REQUIRED
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="ssc">SSC %</label>
+                <input type="number" name="ssc" required #ref26="ngModel"
+                    [(ngModel)]="ed.ssc" id="ssc" class="form-control" ngModel>
+                
+                <div *ngIf="ref26.touched && ref26.invalid" class="alert alert-danger">
+                    PERCENTAGE IS REQUIRED
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="iti">INTER %</label>
+                <input type="number" required #ref27="ngModel" name="inter"
+                    [(ngModel)]="ed.inter" id="iti" class="form-control" ngModel>
+                
+                <div *ngIf="ref27.touched && ref27.invalid" class="alert alert-danger">
+                    PERCENTAGE IS REQUIRED
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <div class="mx-auto">
+            <button type="submit" class="btn btn-success" (click)="updateForm(refg.value)" data-dismiss="modal">UPDATE</button>
+        </div>
+    </div>
+    </div>
+    </div>
+
+</div>

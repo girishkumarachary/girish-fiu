@@ -1,0 +1,26 @@
+<div class="container-fluid">
+<div class="col-sm-12">
+    <div style="overflow-x:auto;">
+<table class="table mt-3">
+    <thead>
+        <th>YEAR</th>
+        <th>BRANCH</th>
+        <th>SUB1</th>
+        <th>SUB2</th>
+        <th>SUB3</th>
+        <th>LAB</th>
+        <th>TOTAL</th>
+    </thead>
+    <tr *ngFor="let data of readmarks">
+        <td>{{data.year}}</td>
+        <td>{{data.branch}}</td>
+        <td>{{data.sub1}}</td>
+        <td>{{data.sub2}}</td>
+        <td>{{data.sub3}}</td>
+        <td>{{data.lab}}</td>
+        <td>{{data.totalmarks}}</td>
+    </tr>
+</table>
+</div>
+</div>
+</div>

@@ -1,0 +1,84 @@
+<div class="container-fluid">
+    <div class="col-sm-12">
+    <div class="text-center">
+    <button class="btn btn-success" data-target="#m" data-toggle="modal">Upload Marks</button>
+    </div>
+    <div class="modal" id="m">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            welcome
+            <button class="btn btn-danger" data-dismiss="modal" class="close">X</button>
+        </div>
+        <div class="modal-body">
+            <div class="jumbotron">
+            <form #ref="ngForm" (ngSubmit)="uploadMarks(ref.value)">
+            <div class="form-group">
+                <label for="yr">YEAR</label>
+                <select name="yearofjoin" id="yr" ngModel>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                </select>
+            </div>
+            <div class="form-group">
+               CHOOSE SUBJECT <br>
+                <select name="branch" class="form-control" ngModel>
+                    <option value=""></option>
+                    <option value="sub1">sub1</option>
+                    <option value="sub2">sub2</option>
+                    <option value="sub3">sub3</option>
+                    <option value="lab">lab</option>
+                    <option value="totalmarks">total marks</option>
+                </select>
+            </div>
+            <form action="/action_page.php">
+                <label for="myfile">UploadMarks</label>
+                <input type="file" id="myfile" name="marks" class="form-control" ngModel
+                (change)="fileUpload($event)">
+            </form>
+        </form>
+    </div>
+        </div>
+        <div class="modal-footer">
+            <div class="mx-auto">
+            <button class="btn btn-success" type="submit" data-dismiss="modal" (click)="uploadMarks(ref.value)">send</button>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div style="overflow-x:auto;">
+    <table class="table table-hover text-center">
+        <thead>
+            <th>YEAR</th>
+            <th>BRANCH</th>
+            <th>STUDENT ID</th>
+            <th>SUB1</th>
+            <th>SUB2</th>
+            <th>SUB3</th>
+            <th>SUB4</th>
+            <th>LAB</th>
+            <th>TOTAL MARKS</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of marks">
+            <td>{{data.year}}</td>
+            <td>{{data.branch}}</td>
+            <td>{{data.studentid}}</td>
+            <td>{{data.sub1}}</td>
+            <td>{{data.sub2}}</td>
+            <td>{{data.sub3}}</td>
+            <td>{{data.sub4}}</td>
+            <td>{{data.lab}}</td>
+            <td>{{data.totalmarks}}</td>
+        </tr>
+    </tbody>
+
+    </table>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+<div class="row">
+<div class="col-sm-3"></div>
+<div class="col-sm-6 text-center mt-3">
+    <div style="overflow-x:auto;">
+    <table class="table">
+        <thead>
+            <th>Date</th>
+            <th>Attendance</th>
+        </thead>
+        <tr *ngFor="let i of this.attendencedata">
+            <td>{{i.date}}</td>
+            <td>{{i.attendence}}</td>
+        </tr>
+    </table>
+    </div>
+</div>
+<div class="col-sm-3"></div>
+</div>
+</div>

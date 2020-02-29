@@ -1,0 +1,9 @@
+.tr:hover {
+    background-color: #ffff99;
+  }
+.container-fluid-sm
+{
+  background-color: linear-gradient(90deg, #00C9FF , #92FE9D );
+  height: auto;
+  width: auto;
+}

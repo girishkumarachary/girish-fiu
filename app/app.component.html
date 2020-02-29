@@ -1,0 +1,46 @@
+<div class="container-fluid-sm">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#" style="margin-left: 10px;">
+    <img src="assets/img1.jpg" alt="logo" width="80x" height="60px">
+  </a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto" >
+      <li class="nav-item">
+        <a class="nav-link" routerLink="home" > <i class="fa fa-fw fa-home"></i>HOME</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fas fa-university"></i>&nbsp; DEPARTMENTS</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item text-success" routerLink="mechanical">Mechanical</a>
+          <a class="dropdown-item text-primary" routerLink="civil">Civil</a>
+          <a class="dropdown-item text-secondary" routerLink="ece">Ece</a>
+          <a class="dropdown-item text-dark" routerLink="cse">Cse</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " routerLink="aboutus" ><i class="fas fa-users"></i>&nbsp; ABOUT US</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="contactus" ><i class="fa fa-fw fa-envelope"></i> CONTACT US</a>
+      </li>
+      <li class="nav-item" *ngIf="!cs.loggedinStatus">
+        <a class="nav-link" routerLink="login" ><i class="fa fa-fw fa-user"></i> LOGIN</a>
+      </li>
+      <li class="nav-item" *ngIf="cs.loggedinStatus">
+        <a class="nav-link" routerLink="login" >LOGOUT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+<router-outlet></router-outlet>
+</div>

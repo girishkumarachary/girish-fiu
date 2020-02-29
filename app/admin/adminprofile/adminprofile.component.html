@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2" style="margin-top: 10px;">
+            <!-- A vertical navbar -->
+            <div class="img">
+              <img class="img-fluid-md" src="assets/profile1.png" height="200px" width="100%" alt="First slide">
+            </div>
+          
+          <div class="text-center">
+            <button class="btn btn-secondary" data-target="#q" data-toggle="modal">view profile</button>
+          </div>
+          <div class="modal" id="q">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button class="close" data-dismiss="modal" class="btn btn-danger ml-auto">X</button>
+                </div>
+                <div class="modal-body">
+                  <div class="jumbotron">
+                    <div class="table border-less">
+                      <tr>
+                        <td>Emp Id:</td>
+                        <td>5678</td>
+                      </tr>
+                      <tr>
+                        <td>Name:</td>
+                        <td>GIRISH KUMAR</td>
+                      </tr>
+                      <tr>
+                        <td>Designation:</td>
+                        <td>System admin</td>
+                      </tr>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+            
+            
+  <nav class="navbar circle bg-light">
+  
+
+    <!-- Links -->
+    <ul class="navbar-nav text-center">
+      
+      <li class="nav-item">
+        <a class="nav-link  " routerLink="generateid">GenerateId</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" routerLink="branch">Branch </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="attendance">Attendance </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="marks">Marks</a>
+      </li>
+     
+    </ul>
+  
+  </nav>
+        </div>
+        <div class="col-sm-10">
+          <h1 class=" text-center"><u> ADMIN PROFILE</u></h1>
+          <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

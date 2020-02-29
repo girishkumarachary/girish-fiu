@@ -1,0 +1,98 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2" style="margin-top: 150px;">
+            <nav class="navbar circle bg-light">
+             <!-- Links -->
+                <ul class="navbar-nav text-center">
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="readattendance">READ ATTENDANCE </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="readmarks">READ MARKS</a>
+                  </li>
+                 
+                </ul>
+              
+              </nav>
+            
+        </div>
+        <div class="col-sm-10">
+            <h1 id="h" class="display-4" style="color: rgb(51, 80, 243);text-align: center;">
+                WELCOME {{profile.firstname}}</h1>
+                <div class="text-center">
+                <button class="btn btn-success text-center" data-target="#a" data-toggle="modal" style="margin-top: 10px;text-align: center;">
+                    See your profile</button>
+                </div>
+                <div class="modal" id="a">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header bg-dark">
+                        <h5 style="color: #fff;">WELCOME {{profile.firstname}}</h5>
+                    <button type="submit" class="btn btn-danger" data-dismiss="modal">X</button>
+                    </div>
+        
+                <div class="modal-body bg-dark text-center">
+                    <div style="overflow-x:auto;">
+                    <table class="table table-borderless text-white">
+                            <tr>
+                                <td>firstname</td>
+                                <td>{{profile.firstname}}</td>
+                            </tr>
+                            <tr>
+                                <td>lastname</td>
+                                <td>{{profile.lastname}}</td>
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                                <td>{{profile.gender}}</td>
+                            </tr>
+                            <tr>
+                                <td>Phonenumber</td>
+                                <td>{{profile.phonenumber}}</td>
+                            </tr>
+                            <tr>
+                                <td>Email Id</td>
+                                <td>{{profile.emailid}}</td>
+                            </tr>
+                            <tr>
+                                <td>Departments</td>
+                                <td>{{profile.departments}}</td>
+                            </tr>
+                            <tr>
+                                <td>Postaladdress</td>
+                                <td>{{profile.postaladdress}}</td>
+                            </tr>
+                            <tr>
+                                <td>Year of join</td>
+                                <td>{{profile.yearofjoin}}</td>
+                            </tr>
+                            <tr>
+                                <td>Ssc %</td>
+                                <td>{{profile.ssc}}</td>
+                            </tr>
+                            <tr>
+                                <td>Inter %</td>
+                                <td>{{profile.inter}}</td>
+                            </tr>
+                            <tr>
+                                <td>Student Id</td>
+                                <td>{{profile.studentid}}</td>
+                            </tr>
+                            <tr>
+                                <td>Password</td>
+                                <td>{{profile.password}}</td>
+                            </tr>
+                        </table>
+                        </div>
+    
+                </div>
+                    </div>
+                    </div>
+            
+            </div>
+            
+        <router-outlet></router-outlet>
+    </div>
+
+        </div>
+</div>

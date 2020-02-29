@@ -1,0 +1,25 @@
+.zoom {
+ 
+
+    transition: transform .3s; /* Animation */
+
+  
+  }
+  
+  .zoom:hover {
+    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+  .c
+  {
+    height: 50%;
+    width: 100%;
+  }
+  #d
+  {
+    width: 100%;
+    height: 46%;
+  }
+  /* #x
+  {
+    width: 440px;
+  } */

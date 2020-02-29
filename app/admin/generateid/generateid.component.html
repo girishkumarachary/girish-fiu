@@ -1,0 +1,69 @@
+<div class="container-fluid">
+    <div class="col-sm-12">
+<div class="text-center">
+    
+<button class="btn btn-success" data-target="#m1" data-toggle="modal">Generate Id</button>
+</div>
+<div class="modal" id="m1">
+    <div class="modal-dialog">
+    <div class="modal-content">
+    <div class="modal-header">
+        welcome
+        <button class="btn btn-danger" data-dismiss="modal" class="close">X</button>
+    </div>
+    <div class="modal-body">
+        <div class="jumbotron">
+        <form #ref="ngForm" >
+        <div class="form-group">
+            <label for="yr">YEAR OF JOIN</label>
+            <input type="number" name="yearofjoin" ngModel class="form-control">
+        </div>
+        <div class="form-group">
+           CHOOSE BRANCH NAME <br>
+            <select name="branchname" class="form-control" ngModel>
+                <option value=""></option>
+                <option value="civil">civil</option>
+                <option value="mech">mech</option>
+                <option value="ece">ece</option>
+                <option value="cse">cse</option>
+            </select>
+           CHOOSE BRANCH CODE <br>
+            <select name="branchcode" class="form-control" ngModel>
+                <option value=""></option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+            </select>
+        </div>
+        
+    </form>
+</div>
+    </div>
+    <div class="modal-footer">
+        <div class="mx-auto">
+        <button class="btn btn-success" type="submit" data-dismiss="modal" (click)="generateId(ref.value)">send</button>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+</div>
+</div>
+<div style="overflow-x:auto;">
+<table class="table table-hover text-center" style="margin-top: 20px;">
+    <thead>
+        <th>YEAR OF JOINING</th>
+        <th>BRANCH NAME</th>
+        <th>BRANCH CODE</th>
+        
+    </thead>
+    <tbody>
+    <tr *ngFor="let k of data">
+        <td>{{k.yearofjoin}}</td>
+        <td>{{k.branchname}}</td>
+        <td>{{k.branchcode}}</td>
+    </tr>
+</tbody>
+</table>
+</div>
